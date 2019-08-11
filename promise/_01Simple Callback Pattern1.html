@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*
+        Simple Callback Pattern
+    */
+    function delay(sec,callback){
+        setTimeout(() => {
+            callback(new Date().toISOString());
+        }, sec*1000);
+    }
+
+    delay(1,(result)=>{
+        console.log(result);
+    })
+
+    console.log("beneath code");
+    </script>
+</body>
+</html>

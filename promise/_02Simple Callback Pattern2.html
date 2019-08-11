@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function delay(sec,callback){
+        setTimeout(() => {
+            callback(new Date().toISOString());
+        }, sec*1000);
+    }
+
+    delay(1,(result)=>{
+        console.log(1, result);
+    });
+    delay(1,(result)=>{
+        console.log(2,result);
+    });
+    delay(1,(result)=>{
+        console.log(3,result);
+    });
+    /* 
+        위 방법으로는 1,2,3초가 지나서 1,2,3이 출력되도록 할 수 없다.
+
+        3개의 delay 함수가 거의동시에 타이머를 시작하기 때문.
+    */
+    </script>
+</body>
+</html>

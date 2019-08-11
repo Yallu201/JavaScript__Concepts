@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function delay(sec,callback){
+        setTimeout(() => {
+            callback(new Date().toISOString());
+        }, sec*1000);
+    }
+
+    delay(1,(result)=>{
+        console.log(1, result);// 눈으로 봤을때 1번째
+        
+        delay(1,(result)=>{
+            
+            delay(1,(result)=>{
+                console.log(3,result);// 눈으로 봤을때 2번째
+            });
+            
+            console.log(2,result);// 눈으로 봤을때 3번째
+        });
+    });
+    /*
+        위와같은 방식으로 코드를 작성하면
+        가독성에 있어서 치명적인 단점이 있다.
+    */
+    </script>
+</body>
+</html>
